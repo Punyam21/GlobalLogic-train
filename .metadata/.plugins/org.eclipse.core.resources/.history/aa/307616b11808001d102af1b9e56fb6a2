@@ -1,0 +1,62 @@
+//Create a Student with with 5 paramters and make this class generic
+
+package com.globallogic.helloworld;
+
+public class generic {
+public static void main(String[] args) {
+	Student<String,String,Integer,Double,Boolean> st=new Student<String,String,Integer,Double,Boolean>("Punyam","Barabanki",21,100.0,true);
+	System.out.println(st.toString());
+}
+}
+class Student<name,add,age,marks,friend>
+{
+	name name;
+	add address;
+	age age;
+	marks m;
+	friend f;
+	public Student(name name, add address, age age, marks m, friend f) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.age = age;
+		this.m = m;
+		this.f = f;
+		
+	}
+	public name getName() {
+		return name;
+	}
+	public void setName(name name) {
+		this.name = name;
+	}
+	public add getAddress() {
+		return address;
+	}
+	public void setAddress(add address) {
+		this.address = address;
+	}
+	public age getAge() {
+		return age;
+	}
+	public void setAge(age age) {
+		this.age = age;
+	}
+	public marks getM() {
+		return m;
+	}
+	public void setM(marks m) {
+		this.m = m;
+	}
+	public friend getF() {
+		return f;
+	}
+	public void setF(friend f) {
+		this.f = f;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", address=" + address + ", age=" + age + ", m=" + m + ", f=" + f + "]";
+	}
+	
+}
