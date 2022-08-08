@@ -1,0 +1,79 @@
+package com.globallogic.helloworld;
+import java.util.*;
+public class compex {
+public static void main(String[] args) {
+	
+	ArrayList<Deta<Integer,Integer>> ar=new ArrayList<Deta<Integer,Integer>>();
+	ar.add(new Deta(5,10));
+	ar.add(new Deta(50,100));
+	ar.add(new Deta(56,150));
+	ar.add(new Deta(576,14540));
+	//ar.remove(2);
+	//	ar.add(10);
+//	ar.add(20);
+//	ar.add(3);
+//	ar.add(5);
+//	Collections.sort(ar);
+	ListIterator<Deta<Integer,Integer>> itr=ar.listIterator();
+         while(itr.hasNext())
+	{
+        	 int r=itr.next().getRoll();
+		if(r==100)	{
+		itr.remove();
+		
+			}
+	}
+	System.out.println(ar.toString());
+	
+}
+
+
+}
+class Deta<A,B>{
+	@Override
+	public String toString() {
+		return "Deta [age=" + age + ", roll=" + roll + "]";
+	}
+	A age;
+	B roll;
+	public A getAge() {
+		return age;
+	}
+	public void setAge(A age) {
+		this.age = age;
+	}
+	public B getRoll() {
+		return roll;
+	}
+	public void setRoll(B roll) {
+		this.roll = roll;
+	}
+	public Deta(A age, B roll) {
+		super();
+		this.age = age;
+		this.roll = roll;
+	}
+	
+	
+	
+	
+	
+//	public int getAge() {
+//		return age;
+//	}
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+//	public int getRoll() {
+//		return roll;
+//	}
+//	public void setRoll(int roll) {
+//		this.roll = roll;
+//	}
+//	public Deta(int age, int roll) {
+//		super();
+//		this.age = age;
+//		this.roll = roll;
+//	}
+//	
+}

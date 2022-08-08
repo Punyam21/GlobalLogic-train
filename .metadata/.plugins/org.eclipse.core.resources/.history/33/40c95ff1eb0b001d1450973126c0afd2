@@ -1,0 +1,127 @@
+package com.globallogic.helloworld;
+import java.util.*;
+public class Mapping {
+public static void main(String[] args) {
+	Map<Students,Det> map=new HashMap<Students,Det>();
+	Scanner sc = new Scanner(System.in);
+	boolean t = true;
+
+	while (t == true) 
+	{
+		if (t == true)
+		{
+			System.out.println("1. Add the employee to list");
+			System.out.println("2. Delete the employee from list");
+			System.out.println("3. Search the employee name");
+			System.out.println("4. Update the employee value using name or name");
+			System.out.println("5. Sort the data of employee");
+			System.out.println("6. Provide the sum of slary of employee");
+			System.out.println("7 search for highest paid salary");
+			System.out.println("8 search for minimum paid salary");
+			int i = sc.nextInt();
+	
+	
+}
+}
+class Students{
+	private String name;
+	private int age;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Students other = (Students) obj;
+		if (age != other.age)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+	public Students(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Students [name=" + name + ", age=" + age + "]";
+	}
+	
+	
+}
+class Det{
+	private int cla;
+	private int roll;
+	public int getCla() {
+		return cla;
+	}
+	public void setCla(int cla) {
+		this.cla = cla;
+	}
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public Det(int cla, int roll) {
+		super();
+		this.cla = cla;
+		this.roll = roll;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cla;
+		result = prime * result + roll;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Det other = (Det) obj;
+		if (cla != other.cla)
+			return false;
+		if (roll != other.roll)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Det [cla=" + cla + ", roll=" + roll + "]";
+	}
+	
+}

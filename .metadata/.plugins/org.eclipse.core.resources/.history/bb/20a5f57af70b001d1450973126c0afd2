@@ -1,0 +1,196 @@
+package com.globallogic.helloworld;
+
+import java.util.*;
+
+public class Mapping {
+public static void main(String[] args) {
+	Map<Students,Det> map=new HashMap<Students,Det>();
+	Scanner sc = new Scanner(System.in);
+	boolean t = true;
+
+	while (t == true) 
+	{
+		if (t == true)
+		{
+			System.out.println("1. Add the Student Data");
+			System.out.println("2. Delete the Student data");
+			System.out.println("3. Search the Student details");
+			System.out.println("4. Update the Student Details");
+			System.out.println("5. Sort the Student Data");
+			
+			int i = sc.nextInt();
+			switch(i){
+			case 1:{
+				System.out.println("enter name");
+				String s = sc.next();
+				System.out.println("enter age");
+				int a = sc.nextInt();
+				System.out.println("enter class in integer");
+				int clas = sc.nextInt();
+				System.out.println("enter roll number");
+				int id = sc.nextInt();
+	        	if(map.keySet().contains(s)){
+				System.out.println("already a value");
+	         	}
+			else{
+   			map.put(new Students(s, a), new Det(clas, id));
+				System.out.println("Data Added Successfully");
+			}
+				break;
+			}
+			case 2:{
+				System.out.println("Enter the person name to be deleted");
+				String na = sc.next();
+				for(Map.Entry<Students, Det>  entry:map.entrySet()){
+					if(entry.getKey().getName().equals(na)){
+						map.remove(entry.getKey());
+					}
+				}
+				System.out.println(map);
+				break;
+			}
+			case 3:{
+				System.out.println("Enter the person name to be Search");
+				String na = sc.next();
+				for(Map.Entry<Students, Det>  entry:map.entrySet()){
+					if(entry.getKey().getName().equals(na)){
+						System.out.println(entry);
+					}
+				}
+				break;
+			}
+			case 4:{
+				break;
+			}
+			case 5:{
+				break;
+			}
+			default:{
+				System.out.println("Invalid input");
+			}
+				
+			}
+			System.out.println("Do you want to continue");
+			t = sc.nextBoolean();
+			
+		}
+		
+		else{
+			System.out.println("Invalid input");
+		}
+	}
+	
+}
+}
+
+	class Students {
+		private String name;
+		private int age;
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + age;
+			result = prime * result + ((name == null) ? 0 : name.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Students other = (Students) obj;
+			if (age != other.age)
+				return false;
+			if (name == null) {
+				if (other.name != null)
+					return false;
+			} else if (!name.equals(other.name))
+				return false;
+			return true;
+		}
+
+		public Students(String name, int age) {
+			super();
+			this.name = name;
+			this.age = age;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public int getAge() {
+			return age;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+		@Override
+		public String toString() {
+			return "Students [name=" + name + ", age=" + age + "]";
+		}
+
+	}
+
+class Det{
+	private int cla;
+	private int roll;
+	public int getCla() {
+		return cla;
+	}
+	public void setCla(int cla) {
+		this.cla = cla;
+	}
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public Det(int cla, int roll) {
+		super();
+		this.cla = cla;
+		this.roll = roll;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + cla;
+		result = prime * result + roll;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Det other = (Det) obj;
+		if (cla != other.cla)
+			return false;
+		if (roll != other.roll)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Det [cla=" + cla + ", roll=" + roll + "]";
+	}
+	
+	
+}

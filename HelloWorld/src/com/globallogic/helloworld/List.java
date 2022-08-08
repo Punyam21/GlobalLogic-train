@@ -16,7 +16,7 @@ public static void main(String[] args) {
 	for(int e:list){
 		System.out.println(e);
 	}
-	list.remove(0);
+	list.remove(1);
 	list.remove(4);
 	list.set(1, 90);
 	System.out.println("List values deleted ");

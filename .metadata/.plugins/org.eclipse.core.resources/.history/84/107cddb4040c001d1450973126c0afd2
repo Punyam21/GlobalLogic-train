@@ -1,0 +1,12 @@
+package com.globallogic.helloworld;
+import java.util.*;
+public class compex {
+public static void main(String[] args) {
+	ArrayListar=new ArrayList();
+	ar.add(10);
+	ar.add(20);
+	ar.add(Agam);
+	ar.add(5);
+	System.out.println(ar);
+}
+}

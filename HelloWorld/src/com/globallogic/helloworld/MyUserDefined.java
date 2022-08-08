@@ -18,14 +18,14 @@ import java.util.Scanner;
 enum Days {
 	MON, TUE, WED, THU, FRI, SAT, SUN
 }
-class Emplo
+class Empl
 {
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
-	public Emplo(int id, String name, double salary) {
+	public Empl(int id, String name, double salary) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -55,7 +55,7 @@ public double getSalary() {
 	double salary;
 }
 //
-public class MyUserDefined {
+public class MyuserDefined {
 	
 	public static final String MON="Monday";
 	
@@ -122,7 +122,7 @@ public class MyUserDefined {
 		 
 		 
 		 //array of object 
-		 Emplo[] arrStu=new Emplo[3];
+		 Empl[] arrStu=new Empl[3];
 		 
 	 System.out.println("Enter the employee data");
 		 for(int i=0;i<3;i++)
@@ -130,7 +130,7 @@ public class MyUserDefined {
 			 int id=sc.nextInt();
 			 String name=sc.next();
 			 double salary=sc.nextDouble();
-			 Emplo emp=new Emplo(id, name, salary);
+			 Empl emp=new Empl(id, name, salary);
 			 arrStu[i]=emp;
 			 
 		 }
@@ -142,7 +142,7 @@ public class MyUserDefined {
 		 //this is advance for loop
 		 //
 	
-	 for(Emplo e:arrStu)
+	 for(Empl e:arrStu)
 		 {
 			 System.out.println(e);
 		 }

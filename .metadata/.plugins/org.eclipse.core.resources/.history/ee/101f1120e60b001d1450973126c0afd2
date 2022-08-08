@@ -1,0 +1,13 @@
+package com.globallogic.helloworld;
+import java.util.*;
+public class Mapping {
+public static void main(String[] args) {
+	Map<Students,Det> map=new HashTable<Students,Det>();
+}
+}
+class Students{
+	
+}
+class Det{
+	
+}
