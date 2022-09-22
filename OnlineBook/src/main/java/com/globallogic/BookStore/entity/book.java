@@ -8,19 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Book")
+@Table(name = "Book")
 public class book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-long id;
+	long id;
 	@Column
-String name;
+	String name;
 	@Column
-String authorname;
+	String authorname;
 	@Column
-double price;
-	
-	
+	double price;
+
 	public book(long id, String name, String authorname, double price) {
 		super();
 		this.id = id;
@@ -28,7 +27,7 @@ double price;
 		this.authorname = authorname;
 		this.price = price;
 	}
-	
+
 	public book() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -37,30 +36,38 @@ double price;
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getAuthorname() {
 		return authorname;
 	}
+
 	public void setAuthorname(String authorname) {
 		this.authorname = authorname;
 	}
+
 	public double getPrice() {
 		return price;
 	}
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	@Override
 	public String toString() {
 		return "book [id=" + id + ", name=" + name + ", authorname=" + authorname + ", price=" + price + "]";
 	}
-	
+
 }

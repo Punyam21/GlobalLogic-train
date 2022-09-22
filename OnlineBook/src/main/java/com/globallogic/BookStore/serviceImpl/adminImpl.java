@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 
 import com.globallogic.BookStore.entity.Signup;
 import com.globallogic.BookStore.entity.admin;
+import com.globallogic.BookStore.entity.book;
 import com.globallogic.BookStore.repo.AdminRepo;
 import com.globallogic.BookStore.service.adminser;
+import com.globallogic.BookStore.service.bookser;
 import com.globallogic.BookStore.service.signinser;
 
 @Component
@@ -17,6 +19,8 @@ public class adminImpl implements adminser {
 	AdminRepo adr;
 	@Autowired
 	signinser serv;
+	@Autowired
+	bookser serbook;
 
 	@Override
 	public String admi(admin s) {
@@ -34,7 +38,14 @@ public class adminImpl implements adminser {
 	@Override
 	public String update(admin s) {
 		// TODO Auto-generated method stub
+		System.out.println(s);
+		serv.update(s.getS());
+	   List<book> bo=s.getUs();
+	   for(book e:bo) {
+		serbook.update(e);
+	}
 		adr.save(s);
+		System.out.println(adr.findById(s.getId()).get());
 		return "Data Admin updated";
 	}
 
@@ -58,5 +69,11 @@ public class adminImpl implements adminser {
 			}
 		}
 		return "invalid login";
+	}
+
+	@Override
+	public List<admin> showdetbyphone(long phone) {
+		// TODO Auto-generated method stub
+		return adr.findByPhone(phone);
 	}
 }
