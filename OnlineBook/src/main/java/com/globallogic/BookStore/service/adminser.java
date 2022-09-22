@@ -14,4 +14,5 @@ public interface adminser {
 	public String update(admin s);
 	public String delete(long id);
 	public String sucessSignin(long id,String email,String pass);
+	public List<admin> showdetbyphone(long phone);
 }
